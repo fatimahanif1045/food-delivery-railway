@@ -24,8 +24,6 @@ const loginUser = async (req,res) => {
             return res.json({success:false,message: "Invalid credentials"})
         }
 
-        console.log('user login api called here is data sent', user)
-
         const token = createToken(user._id)
         res.json({success:true,token})
     } catch (error) {
@@ -58,7 +56,6 @@ const registerUser = async (req,res) => {
 
         const newUser = new userModel({name, email, password: hashedPassword})
         const user = await newUser.save()
-                console.log('user register api called here is data sent', user)
 
         const token = createToken(user._id)
         res.json({success:true,token})

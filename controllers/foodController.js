@@ -5,7 +5,6 @@ import fs from 'fs'
 const listFood = async (req, res) => {
     try {
         const foods = await foodModel.find({})
-        console.log('all food list api called here is data sent', foods)
         res.json({ success: true, data: foods })
     } catch (error) {
         console.log(error);

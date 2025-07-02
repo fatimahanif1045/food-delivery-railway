@@ -6,7 +6,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 //config variables
 const currency = "usd";
 const deliveryCharge = 5;
-const frontend_URL = 'https://fooddelivery-platform.netlify.app/';
+//const frontend_URL = 'http://localhost:5173';
+const frontend_URL = 'https://fooddelivery-platform.netlify.app';
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
